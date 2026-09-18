@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты | Персональный сайт</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="header-wrapper" id="top-contacts">
+        <header>
+            <h1>Andrei Lapko</h1>
+            <p>Backend Dev</p>
+        </header>
+    </div>
+
+    <div class="navbar-wrapper">
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="about.html">Обо мне</a>
+            <a href="skills.html">Навыки</a>
+            <a href="contacts.html" class="active">Контакты</a>
+        </nav>
+    </div>
+
+    <main>
+        <div class="contacts-grid">
+            <div class="content-block">
+                <div class="status-badge">
+                    <span class="status-dot"></span> Open for new projects
+                </div>
+                <h2>Связь</h2>
+                <p class="text-muted text-small">
+                    Открыт к предложениям по бэкенд-разработке и проектированию систем. Напишите напрямую на почту или используйте форму.
+                </p>
+
+                <ul class="contact-info-list">
+                    <li class="contact-info-item">
+                        <span class="contact-label">Email</span>
+                        <span class="contact-value"><a href="mailto:lapkode01@gmail.com">lapkode01@gmail.com</a></span>
+                    </li>
+                    <li class="contact-info-item">
+                        <span class="contact-label">Локация</span>
+                        <span class="contact-value"><a href="https://maps.app.goo.gl/t7BrJo4FLAvCYnM47" target="_blank" rel="noopener noreferrer">Hrodna, Belarus (UTC+3)</a></span>
+                    </li>
+                    <li class="contact-info-item">
+                        <span class="contact-label">Ссылки</span>
+                        <span class="contact-value">
+                            <a href="https://github.com/andreylapko1" target="_blank" rel="noopener noreferrer" class="link-spaced">GitHub</a>
+                            <a href="https://t.me/adbestuzhev" target="_blank" rel="noopener noreferrer">Telegram</a>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="content-block" id="message-form">
+                <h2>Форма связи</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="username">Имя</label>
+                        <input type="text" id="username" name="username" placeholder="Иван" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="useremail">Email</label>
+                        <input type="email" id="useremail" name="email" placeholder="email@example.com" required>
+                    </div>
+
+                    <div class="form-group" style="display: flex; flex-direction: column; flex: 1;">
+                        <label for="usermessage">Сообщение</label>
+                        <textarea id="usermessage" name="text" placeholder="Детали задачи..." required></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="form-btn submit-btn">Отправить</button>
+                        <button type="reset" class="form-btn reset-btn">Сброс</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="centered-container full-width-center">
+            <a href="#top-contacts" class="scroll-top-link">Наверх</a>
+        </div>
+    </main>
+
+    <footer>
+        <div>&copy; 2026 @lapkode.</div>
+    </footer>
+
+    <script>
+        const form = document.querySelector('#message-form form');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const data = Object.fromEntries(new FormData(form).entries());
+
+            fetch('http://127.0.0.1:8000/api/send-email/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(res => {
+                if (res.ok) {
+                    alert('Успешно отправлено!');
+                    form.reset();
+                } else {
+                    alert('Ошибка сервера при отправке.');
+                }
+            })
+            .catch(err => {
+                alert('Ошибка сети или сервера.');
+                console.error(err);
+            });
+        });
+    </script>
+
+</body>
+</html>

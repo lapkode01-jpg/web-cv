@@ -1,0 +1,640 @@
+/* Premium Modern Dark System (Vercel / Linear Style) */
+:root {
+    --bg-main: #090d16;
+    --bg-panel: #111827;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent: #38bdf8;
+    --accent-hover: #60a5fa;
+    --navbar-bg: rgba(15, 23, 42, 0.75);
+    --border-color: #1e293b;
+    --glow: rgba(56, 189, 248, 0.15);
+}
+html {
+    scroll-behavior: smooth;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ХЕДЕР С МЯГКИМ ГРАДИЕНТОМ */
+.header-wrapper {
+    background-color: #0d1322;
+    border-bottom: 1px solid var(--border-color);
+}
+
+header {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 35px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header p {
+    margin: 0;
+    color: var(--accent);
+    font-size: 0.85em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    background-color: rgba(56, 189, 248, 0.08);
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    box-shadow: 0 0 12px var(--glow);
+}
+
+/* СТЕКЛЯННЫЙ ЭФФЕКТ НАВБАРА (GLASSMORPHISM) */
+.navbar-wrapper {
+    background-color: var(--navbar-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+}
+
+nav {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.88em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+}
+
+nav a:hover, nav a.active {
+    color: var(--accent);
+    text-shadow: 0 0 8px var(--glow);
+}
+
+/* КОНТЕНТНАЯ ЗОНА И КАРТОЧКИ */
+main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.content-block {
+    background-color: var(--bg-panel);
+    border: 1px solid var(--border-color);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--text-main);
+    display: inline-block;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 4px;
+}
+
+/* СЕТКИ */
+.studio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 24px;
+    margin: 32px 0;
+}
+
+.studio-card {
+    background-color: var(--bg-panel);
+    border: 1px solid var(--border-color);
+    padding: 30px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.photo-one, .photo-two {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.photo-one { height: 260px; margin-top: 20px; }
+.photo-two { height: 440px; }
+
+.contacts-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1.3fr;
+    gap: 30px;
+    align-items: stretch;
+}
+
+.contacts-grid .content-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 0;
+}
+
+/* Растягиваем форму на всю доступную высоту блока */
+.contacts-grid #message-form form {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+}
+
+/* Поле сообщения занимает оставшееся пространство */
+.contacts-grid #message-form textarea {
+    flex: 1;
+    min-height: 140px;
+    resize: vertical;
+}
+
+/* Прижимаем кнопки к нижней части формы */
+.contacts-grid #message-form .form-actions {
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.about-photo-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.profile-img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+/* СТИЛИ СЕРТИФИКАТА */
+.certificate-card {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 30px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.certificate-link {
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.certificate-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.certificate-img:hover {
+    transform: scale(1.04);
+}
+
+.cert-title {
+    margin: 0 0 8px 0;
+    color: var(--text-main);
+    font-size: 1.1em;
+}
+
+.cert-meta {
+    margin: 0 0 12px 0;
+    color: var(--accent);
+    font-size: 0.85em;
+    font-weight: 600;
+}
+
+.cert-desc {
+    margin: 0 0 20px 0;
+    color: var(--text-muted);
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+/* ССЫЛКИ И ТЕКСТ */
+main a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.15s ease;
+}
+
+main a:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+}
+
+.text-muted {
+    color: var(--text-muted);
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+
+/* СПИСКИ */
+ul, ol {
+    padding-left: 20px;
+    margin: 10px 0;
+    color: var(--text-muted);
+}
+
+li { margin-bottom: 10px; }
+
+/* ПОЛЯ ФОРМЫ */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #0b0f19;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 14px 16px;
+    border-radius: 8px;
+    font-size: 0.95em;
+    margin-top: 6px;
+    margin-bottom: 18px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 10px var(--glow);
+}
+
+.form-group label {
+    color: var(--text-muted);
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+/* ТАБЛИЦЫ */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 30px 0;
+    background-color: var(--bg-panel);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+th {
+    background-color: #0b0f19;
+    color: var(--text-main);
+    padding: 16px 20px;
+    font-weight: 600;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+td {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 0.95em;
+    text-align: left;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover td {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* КНОПКИ */
+.btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #2563eb 0%, #38bdf8 100%);
+    color: #ffffff;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+    text-decoration: none;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(56, 189, 248, 0.45);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    box-shadow: none;
+}
+
+.btn-secondary:hover {
+    background-color: var(--border-color);
+    color: var(--text-main);
+    box-shadow: none;
+}
+
+.btn-sm {
+    font-size: 0.75em;
+    padding: 8px 18px;
+}
+
+.text-center {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* СТИЛИ КОНТАКТОВ И СКИНЛОВ */
+.contact-info-list {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0 0 0;
+}
+
+.contact-info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.contact-info-item:last-child {
+    border-bottom: none;
+}
+
+.contact-label {
+    font-size: 0.75em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+}
+
+.contact-value {
+    font-size: 1.05em;
+    font-weight: 500;
+}
+
+.status-badge {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85em;
+    color: #4ade80;
+    background: rgba(74, 222, 128, 0.1);
+    border: 1px solid rgba(74, 222, 128, 0.2);
+    padding: 6px 12px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #4ade80;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #4ade80;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.skill-card {
+    background-color: #0b0f19;
+    border: 1px solid var(--border-color);
+    padding: 24px;
+    border-radius: 8px;
+}
+
+.skill-title {
+    color: var(--accent);
+    margin-top: 0;
+}
+
+/* ПОДВАЛ */
+footer {
+    background-color: #0d1322;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    padding: 35px 20px;
+    margin-top: 80px;
+    text-align: center;
+    font-size: 0.85em;
+}
+
+@media (max-width: 850px) {
+    header { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .studio-grid,
+    .contacts-grid,
+    .about-grid,
+    .certificate-card {
+        grid-template-columns: 1fr;
+    }
+    .photo-two { height: 280px; }
+}
+
+
+/* Доработки для кнопок, форм и центрирования */
+
+.scroll-top-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.scroll-top-link:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-1px);
+    color: #ffffff;
+}
+
+/* Центрирование кнопки «Наверх» под всей сеткой */
+.full-width-center {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    width: 100%;
+}
+
+/* Контейнер для кнопок формы */
+.form-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Базовый сброс и стилизация кнопок формы */
+.form-btn {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    outline: none;
+    font-family: inherit;
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Кнопка отправки в синеватом стиле */
+.submit-btn {
+    background: rgba(56, 189, 248, 0.12);
+    color: var(--accent);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    font-weight: 600;
+    box-shadow: 0 0 12px var(--glow);
+}
+
+.submit-btn:hover {
+    background: rgba(56, 189, 248, 0.25);
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-1px);
+    box-shadow: 0 0 16px var(--glow);
+}
+
+/* Кнопка сброса */
+.reset-btn {
+    background: transparent;
+    color: #94a3b8;
+    border-color: var(--border-color);
+}
+
+.reset-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+}
+
+/* Стили для кнопок на главной странице (Связаться / Подробнее) */
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+/* Кнопка «Связаться» — спокойный полупрозрачный акцент */
+.hero-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(56, 189, 248, 0.12);
+    color: var(--accent);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.hero-btn-primary:hover {
+    background: rgba(56, 189, 248, 0.22);
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-1px);
+}
+
+/* Кнопка «Подробнее» — темная, приглушенная */
+.hero-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-muted);
+    border: 1px solid var(--border-color);
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.hero-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-main);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
