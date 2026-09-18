@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обо мне | Персональный сайт</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+
+    <div class="header-wrapper" id="top-about">
+        <header>
+            <h1>Andrei Lapko</h1>
+            <p>Backend Dev</p>
+        </header>
+    </div>
+
+    <div class="navbar-wrapper">
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="about.html" class="active">Обо мне</a>
+            <a href="skills.html">Навыки</a>
+            <a href="contacts.html">Контакты</a>
+        </nav>
+    </div>
+
+    <main>
+        <!-- Основная сетка страницы -->
+        <div class="about-grid">
+
+            <div class="content-block">
+                <h2>О себе</h2>
+                <p class="muted-text">
+                    Backend-разработчик. Специализируюсь на проектировании отказоустойчивых серверных решений, разработке REST API и масштабируемой логики на Python.
+                </p>
+                <p class="muted-text">
+                    Фокусируюсь на чистоте кода, производительности систем и строгой архитектуре без лишних зависимостей.
+                </p>
+
+                <h2 class="indented-title">Принципы работы</h2>
+                <ul>
+                    <li><strong>Производительность:</strong> Оптимизация нагрузки и неблокирующий ввод-вывод (asyncio).</li>
+                    <li><strong>Надежность:</strong> Предсказуемое поведение сервисов и обработка ошибок.</li>
+                    <li><strong>Архитектура:</strong> Проектирование структурированных и поддерживаемых систем.</li>
+                </ul>
+            </div>
+
+            <!-- Изображение профиля -->
+            <div class="content-block about-photo-block">
+                <h2>Photo</h2>
+                <img src="../static/static_data/me-photo.jpeg" alt="Andrei Lapko" class="profile-img">
+            </div>
+
+        </div>
+
+        <!-- Опыт работы -->
+        <div class="content-block spaced-block">
+            <h2>Опыт работы</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Период</th>
+                        <th>Позиция</th>
+                        <th>Компания</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2025 — 2026</td>
+                        <td>Python Backend Dev</td>
+                        <td>FRC</td>
+                    </tr>
+                    <tr>
+                        <td>2026 — 2026</td>
+                        <td>Python Developer</td>
+                        <td>Fintech Lab</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Сертификаты -->
+        <div class="content-block spaced-block">
+            <h2>Сертификаты</h2>
+
+            <div class="certificate-card">
+                <a href="../static/static_data/zertificate.pdf" target="_blank" rel="noopener noreferrer" class="certificate-link">
+                    <img src="../zertificate.png" alt="Сертификат Python Developer" class="certificate-img">
+                </a>
+
+                <div>
+                    <h3 class="cert-title">Python Developer + AI Integration</h3>
+                    <p class="cert-meta">IT Career Hub GmbH • 2025</p>
+                    <p class="cert-desc">
+                        Курс по бэкенд-разработке, проектированию архитектуры и интеграции моделей.
+                    </p>
+                    <a href="../static/static_data/zertificate.pdf" target="_blank" rel="noopener noreferrer" class="document-action-link">
+                        Открыть оригинал ↗
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="full-width-center">
+            <a href="#top-about" class="scroll-top-link">Наверх</a>
+        </div>
+    </main>
+
+    <footer>
+        <div>&copy; 2026 @lapkode.</div>
+    </footer>
+
+</body>
+</html>
