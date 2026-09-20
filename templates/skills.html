@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Навыки | Персональный сайт</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <div class="header-wrapper" id="top-skills">
+        <header>
+            <h1>Andrei Lapko</h1>
+            <p>Backend Dev</p>
+        </header>
+    </div>
+
+    <div class="navbar-wrapper">
+        <nav>
+            <a href="/">Главная</a>
+            <a href="/about">Обо мне</a>
+            <a href="/skills" class="active">Навыки</a>
+            <a href="/contacts">Контакты</a>
+        </nav>
+    </div>
+
+    <main>
+        <div class="content-block">
+            <h2>Технологический стек</h2>
+            <p class="text-muted" style="margin-bottom: 30px;">
+                Инструменты и технологии, применяемые для разработки серверной архитектуры и систем.
+            </p>
+
+            <div class="skills-grid">
+                <!-- Backend -->
+                <div class="skill-card">
+                    <h3 class="skill-title">Backend</h3>
+                    <ul>
+                        <li>Python 3.13 / FastAPI / Django / Flask</li>
+                        <li>Pydantic / Mail Utilities</li>
+                        <li>REST API Architecture</li>
+                        <li>PostgreSQL / MySQL / Redis / MongoDB / Neo4j</li>
+                        <li>RabbitMQ / Kafka</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3 class="skill-title">Смежные задачи</h3>
+                    <ul>
+                        <li>HTML5 / CSS3</li>
+                        <li>Telegram Bots (Aiogram / telebot)</li>
+                        <li>Web scraping</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3 class="skill-title">Инструменты</h3>
+                    <ul>
+                        <li>Git / GitHub</li>
+                        <li>Docker / Docker Compose</li>
+                        <li>Uvicorn / ASGI</li>
+                        <li>Linux / macOS</li>
+                        <li>AWS / GCP</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Таблица уровня владения -->
+        <div class="content-block mt-30">
+            <h2>Практический опыт</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Категория</th>
+                        <th>Инструмент</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Backend API</td>
+                        <td>Django / FastAPI</td>
+                        <td>Production Ready</td>
+                    </tr>
+                    <tr>
+                        <td>Базы данных</td>
+                        <td>PostgreSQL</td>
+                        <td>Advanced Usage</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="full-width-center">
+            <a href="#top-skills" class="scroll-top-link">Наверх</a>
+        </div>
+    </main>
+
+    <footer>
+        <div>&copy; 2026 @lapkode.</div>
+    </footer>
+
+</body>
+</html>

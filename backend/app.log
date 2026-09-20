@@ -1,0 +1,114 @@
+2026-09-18 21:55:44 [INFO] main: [SUCcESS]:main: andreycgo765@gmail.com send
+2026-09-18 21:57:21 [INFO] main: [SUCcESS]:main: andreycgo765@gmail.com send
+2026-09-18 22:00:20 [INFO] main: [SUCCESS]:main: andreycgo765@gmail.com send
+2026-09-18 22:02:17 [INFO] main: [SUCCESS]:main: andreycgo765@gmail.com send
+2026-09-18 22:04:26 [INFO] main: [SUCCESS]:main: andreycgo765@gmail.com send
+2026-09-18 22:06:27 [INFO] main: [SUCCESS]:main: andreycgo765@gmail.com send
+2026-09-18 22:07:51 [INFO] celery.worker.consumer.connection: Connected to amqp://worker_user:**@127.0.0.1:5672/email_broker
+2026-09-18 22:07:51 [INFO] celery.worker.consumer.mingle: mingle: searching for neighbors
+2026-09-18 22:07:52 [INFO] celery.worker.consumer.mingle: mingle: all alone
+2026-09-18 22:07:52 [INFO] celery.apps.worker: celery@DESKTOP-K29ASVI ready.
+2026-09-18 22:07:55 [INFO] celery.worker.strategy: Task tasks.send_email2host[d0d38c46-a32d-4070-b06e-738173a95316] received
+2026-09-18 22:08:16 [ERROR] worker: [ERROR]:worker: [WinError 10060] Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера
+Traceback (most recent call last):
+  File "C:\Users\andre\PycharmProjects\private_\lab1\backend\worker.py", line 28, in send_message
+    with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
+         ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Python\pythoncore-3.14-64\Lib\smtplib.py", line 261, in __init__
+    (code, msg) = self.connect(host, port)
+                  ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Python\pythoncore-3.14-64\Lib\smtplib.py", line 348, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Python\pythoncore-3.14-64\Lib\smtplib.py", line 318, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+                                    self.source_address)
+                                    ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Python\pythoncore-3.14-64\Lib\socket.py", line 874, in create_connection
+    raise exceptions[0]
+  File "C:\Users\andre\AppData\Local\Python\pythoncore-3.14-64\Lib\socket.py", line 859, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+TimeoutError: [WinError 10060] Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера
+2026-09-18 22:08:16 [INFO] celery.app.trace: Task tasks.send_email2host[d0d38c46-a32d-4070-b06e-738173a95316] succeeded in 21.224163700000645s: True
+2026-09-18 22:08:16 [INFO] celery.worker.strategy: Task tasks.send_email2user[a50ecd06-c7f0-4066-9e54-562ab72f4598] received
+2026-09-18 22:08:37 [ERROR] worker: [ERROR]:worker: [WinError 10060] Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера
+Traceback (most recent call last):
+  File "C:\Users\andre\PycharmProjects\private_\lab1\backend\worker.py", line 28, in send_message
+    with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
+         ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Python\pythoncore-3.14-64\Lib\smtplib.py", line 261, in __init__
+    (code, msg) = self.connect(host, port)
+                  ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Python\pythoncore-3.14-64\Lib\smtplib.py", line 348, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Python\pythoncore-3.14-64\Lib\smtplib.py", line 318, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+                                    self.source_address)
+                                    ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Python\pythoncore-3.14-64\Lib\socket.py", line 874, in create_connection
+    raise exceptions[0]
+  File "C:\Users\andre\AppData\Local\Python\pythoncore-3.14-64\Lib\socket.py", line 859, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+TimeoutError: [WinError 10060] Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера
+2026-09-18 22:08:37 [INFO] celery.app.trace: Task tasks.send_email2user[a50ecd06-c7f0-4066-9e54-562ab72f4598] succeeded in 21.006306600000244s: True
+2026-09-18 22:08:43 [INFO] celery.worker.strategy: Task tasks.send_email2host[d300e0e6-698c-4a3a-a848-c0bd88b68790] received
+2026-09-18 22:09:04 [ERROR] worker: [ERROR]:worker: [WinError 10060] Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера
+Traceback (most recent call last):
+  File "C:\Users\andre\PycharmProjects\private_\lab1\backend\worker.py", line 28, in send_message
+    with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
+         ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Python\pythoncore-3.14-64\Lib\smtplib.py", line 261, in __init__
+    (code, msg) = self.connect(host, port)
+                  ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Python\pythoncore-3.14-64\Lib\smtplib.py", line 348, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Python\pythoncore-3.14-64\Lib\smtplib.py", line 318, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+                                    self.source_address)
+                                    ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Python\pythoncore-3.14-64\Lib\socket.py", line 874, in create_connection
+    raise exceptions[0]
+  File "C:\Users\andre\AppData\Local\Python\pythoncore-3.14-64\Lib\socket.py", line 859, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+TimeoutError: [WinError 10060] Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера
+2026-09-18 22:09:04 [INFO] celery.app.trace: Task tasks.send_email2host[d300e0e6-698c-4a3a-a848-c0bd88b68790] succeeded in 21.004688500001066s: True
+2026-09-18 22:09:04 [INFO] celery.worker.strategy: Task tasks.send_email2user[f4d21ea3-3083-4e37-ae53-5b3c290063d1] received
+2026-09-18 22:09:25 [ERROR] worker: [ERROR]:worker: [WinError 10060] Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера
+Traceback (most recent call last):
+  File "C:\Users\andre\PycharmProjects\private_\lab1\backend\worker.py", line 28, in send_message
+    with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
+         ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Python\pythoncore-3.14-64\Lib\smtplib.py", line 261, in __init__
+    (code, msg) = self.connect(host, port)
+                  ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Python\pythoncore-3.14-64\Lib\smtplib.py", line 348, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Python\pythoncore-3.14-64\Lib\smtplib.py", line 318, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+                                    self.source_address)
+                                    ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Python\pythoncore-3.14-64\Lib\socket.py", line 874, in create_connection
+    raise exceptions[0]
+  File "C:\Users\andre\AppData\Local\Python\pythoncore-3.14-64\Lib\socket.py", line 859, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+TimeoutError: [WinError 10060] Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера
+2026-09-18 22:09:25 [INFO] celery.app.trace: Task tasks.send_email2user[f4d21ea3-3083-4e37-ae53-5b3c290063d1] succeeded in 21.005418400000053s: True
+2026-09-18 22:09:56 [INFO] celery.worker.consumer.connection: Connected to amqp://worker_user:**@127.0.0.1:5672/email_broker
+2026-09-18 22:09:56 [INFO] celery.worker.consumer.mingle: mingle: searching for neighbors
+2026-09-18 22:09:57 [INFO] celery.worker.consumer.mingle: mingle: all alone
+2026-09-18 22:09:57 [INFO] celery.apps.worker: celery@DESKTOP-K29ASVI ready.
+2026-09-18 22:10:02 [INFO] celery.worker.strategy: Task tasks.send_email2host[cd3f2398-6253-4856-a2d5-656e6a589e7f] received
+2026-09-18 22:10:05 [INFO] celery.app.trace: Task tasks.send_email2host[cd3f2398-6253-4856-a2d5-656e6a589e7f] succeeded in 2.2243037999978696s: True
+2026-09-18 22:10:05 [INFO] celery.worker.strategy: Task tasks.send_email2user[19e7de3b-ae38-4270-85e1-add9ef49e28b] received
+2026-09-18 22:10:07 [INFO] celery.app.trace: Task tasks.send_email2user[19e7de3b-ae38-4270-85e1-add9ef49e28b] succeeded in 2.10693209999954s: True

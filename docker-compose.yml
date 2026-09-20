@@ -1,0 +1,50 @@
+services:
+  fastapi:
+    build: .
+    restart: always
+    expose:
+      - 8000
+    env_file:
+      - ".env"
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+
+  nginx:
+    image: nginx:1.25-alpine
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./backend/nginx.conf:/etc/nginx/nginx.conf/
+      - ./empty_conf:/etc/nginx/conf.d/
+      - ./static:/app/static/
+      - ./templates:/app/templates/
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    restart: always
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    env_file:
+      - ".env"
+    healthcheck:
+        test: [ "CMD", "rabbitmq-diagnostics", "-q", "ping" ]
+        interval: 5s
+        timeout: 5s
+        retries: 10
+        start_period: 10s
+
+
+  worker:
+    build: .
+    command: celery -A config:celery_app worker --loglevel=info -Q queue.send_email
+    restart: always
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    env_file:
+      - ".env"
+
